@@ -1,7 +1,10 @@
 import { Fragment } from 'react';
-import user from './user.json';
+import user from './data/user.json';
 import Section from './components/Section';
 import Profile from './components/Profile';
+// import Statistics from 'components/Statistics/Statistics';
+import ItemsList from './components/Statistics/ItemsList';
+import statisticsData from './data/data.json';
 
 export const App = () => {
   const {
@@ -24,7 +27,9 @@ export const App = () => {
           likes={likes}
         />
       </Section>
-      <Section title="Statistics section"></Section>
+      <Section title="Upload stats">
+        <ItemsList items={statisticsData} />
+      </Section>
       <Section title="Friend list section"></Section>
       <Section title="Transactions history section"></Section>
     </>
