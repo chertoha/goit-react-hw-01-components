@@ -1,33 +1,31 @@
-// import PropTypes from 'prop-types';
-// // import data from '../data/data.json';
+import PropTypes from 'prop-types';
+import StatisticsItem from './StatisticsItem';
 
-// const Statistics = ({ title }) => {
-//   return (
-//     <section className="statistics section">
-//       {title && <h2 className="title">{title}</h2>}
+const Statistics = ({ title, stats }) => {
+  return (
+    <section className="statistics">
+      <h2 className="title">{title}</h2>
 
-//       <ul className="stat-list">
-//         {data.map(({ id, label, percentage }) => {
-//           return (
-//             <li key={id} className="item">
-//               <span className="label">{label}</span>
-//               <span className="percentage">{percentage}</span>
-//             </li>
-//           );
-//         })}
-//       </ul>
-//     </section>
-//   );
-// };
+      <ul className="stat-list">
+        {stats.map(({ id, label, percentage }) => {
+          return (
+            <li key={id} className="item">
+              <StatisticsItem label={label} percentage={percentage} />
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+};
 
-// export default Statistics;
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ),
+};
 
-// // [
-// //   { id: 'id-1', label: '.docx', percentage: 22 },
-// //   { id: 'id-2', label: '.pdf', percentage: 4 },
-// //   { id: 'id-3', label: '.mp3', percentage: 17 },
-// //   { id: 'id-4', label: '.psd', percentage: 47 },
-// //   { id: 'id-5', label: '.pdf', percentage: 10 },
-// // ];
-
-// Statistics.ptopTypes = {};
+export default Statistics;

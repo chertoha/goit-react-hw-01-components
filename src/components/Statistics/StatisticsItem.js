@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Item = ({ label, percentage }) => {
+const StatisticsItem = ({ label, percentage }) => {
   return (
     <>
       <span className="label">{label}</span>
@@ -9,9 +9,9 @@ const Item = ({ label, percentage }) => {
   );
 };
 
-Item.propTypes = {
+StatisticsItem.propTypes = {
   label: PropTypes.string.isRequired,
   percentage: PropTypes.number.isRequired,
 };
 
-export default Item;
+export default StatisticsItem;

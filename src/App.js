@@ -1,10 +1,13 @@
-import { Fragment } from 'react';
-import user from './data/user.json';
 import Section from './components/Section';
 import Profile from './components/Profile';
-// import Statistics from 'components/Statistics/Statistics';
-import ItemsList from './components/Statistics/ItemsList';
+import Statistics from './components/Statistics/Statistics';
+import FriendsList from './components/FriendsList/FriendsList';
+import TransactionHistory from './components/TransactionHistory/TransactionHistory';
+
+import user from './data/user.json';
 import statisticsData from './data/data.json';
+import friends from './data/friends.json';
+import transactions from './data/transactions.json';
 
 export const App = () => {
   const {
@@ -27,11 +30,13 @@ export const App = () => {
           likes={likes}
         />
       </Section>
-      <Section title="Upload stats">
-        <ItemsList items={statisticsData} />
+      <Statistics title="Upload stats" stats={statisticsData} />
+      <Section title="Friends list">
+        <FriendsList friends={friends} />
       </Section>
-      <Section title="Friend list section"></Section>
-      <Section title="Transactions history section"></Section>
+      <Section title="Transactions history section">
+        <TransactionHistory items={transactions} />
+      </Section>
     </>
   );
 };
