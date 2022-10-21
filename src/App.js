@@ -1,5 +1,5 @@
-import Section from './components/Section';
-import Profile from './components/Profile';
+import Section from './components/Section/Section';
+import Profile from './components/Profile/Profile';
 import Statistics from './components/Statistics/Statistics';
 import FriendsList from './components/FriendsList/FriendsList';
 import TransactionHistory from './components/TransactionHistory/TransactionHistory';
