@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
-import { Wrapper, Title } from './Section.styled';
+import { Title } from './Section.styled';
+import { Box } from 'components/Box/Box';
 
 const Section = ({ title, children }) => {
   return (
-    <Wrapper>
+    <Box bg="bgd" pt={6} pb={6} textAlign={'center'} as="section">
       <Title>{title}</Title>
       {children}
-    </Wrapper>
+    </Box>
   );
 };
 

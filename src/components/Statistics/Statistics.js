@@ -1,11 +1,12 @@
+import { Box } from 'components/Box/Box';
 import PropTypes from 'prop-types';
 import randomColor from 'utils/randomColor';
 import StatisticsItem from '../StatisticsItem/StatisticsItem';
-import { Title, List, ListItem, Wrapper } from './Statistics.styled';
+import { Title, List, ListItem } from './Statistics.styled';
 
 const Statistics = ({ title, stats }) => {
   return (
-    <Wrapper>
+    <Box bg="secondaryBgd" pt={6} pb={6}>
       <Title>{title}</Title>
 
       <List>
@@ -17,7 +18,7 @@ const Statistics = ({ title, stats }) => {
           );
         })}
       </List>
-    </Wrapper>
+    </Box>
   );
 };
 

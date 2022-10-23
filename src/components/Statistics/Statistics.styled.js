@@ -1,12 +1,4 @@
 import styled from 'styled-components';
-import randomColor from 'utils/randomColor';
-
-export const Wrapper = styled.section`
-  padding-top: ${p => p.theme.space[6]};
-  padding-bottom: ${p => p.theme.space[6]};
-
-  background-color: ${p => p.theme.colors.secondaryBgd};
-`;
 
 export const Title = styled.h2`
   width: 300px;
