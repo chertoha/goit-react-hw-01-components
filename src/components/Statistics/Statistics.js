@@ -1,28 +1,23 @@
 import PropTypes from 'prop-types';
 import randomColor from 'utils/randomColor';
 import StatisticsItem from '../StatisticsItem/StatisticsItem';
-import cssSection from 'components/Section/Section.module.css';
-import css from 'components/Statistics/Statistics.module.css';
+import { Title, List, ListItem, Wrapper } from './Statistics.styled';
 
 const Statistics = ({ title, stats }) => {
   return (
-    <section className={[cssSection.section, css.statistics].join(' ')}>
-      <h2 className={css.title}>{title}</h2>
+    <Wrapper>
+      <Title>{title}</Title>
 
-      <ul className={css.stat_list}>
+      <List>
         {stats.map(({ id, label, percentage }) => {
           return (
-            <li
-              key={id}
-              className={css.item}
-              style={{ backgroundColor: randomColor() }}
-            >
+            <ListItem key={id} bgdColor={randomColor()}>
               <StatisticsItem label={label} percentage={percentage} />
-            </li>
+            </ListItem>
           );
         })}
-      </ul>
-    </section>
+      </List>
+    </Wrapper>
   );
 };
 
